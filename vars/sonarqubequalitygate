@@ -1,0 +1,11 @@
+def call(String sonarqubeCredentialsId) {
+    timeout(time: 3, unit: 'MINUTES') {
+        script{
+            def qualityGate = waitForQualityGate()
+            println "STATUS OF QUALITY GATES: " + qualityGate
+            if (qualityGate.status != 'OK') {
+                error "SonarQube quality gate failed: ${qualityGate.status}"
+            }
+        }
+    }
+}
