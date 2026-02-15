@@ -3,6 +3,7 @@ def call() {
         file(credentialsId: 'COSIGN_KEY_FILE', variable: 'COSIGN_KEY_FILE'),
         string(credentialsId: 'COSIGN_PASSWORD', variable: 'COSIGN_PASSWORD')
     ]) {
+        println "IMAGE_DIGEST: " + env.IMAGE_DIGEST
         sh """
             set -e
             export COSIGN_EXPERIMENTAL=1
