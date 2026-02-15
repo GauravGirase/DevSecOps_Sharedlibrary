@@ -1,6 +1,6 @@
 def call() {
     withCredentials([
-        file(credentialsId: 'COSIGN_PRIVATE_KEY', variable: 'COSIGN_KEY_FILE'),
+        file(credentialsId: 'COSIGN_KEY_FILE', variable: 'COSIGN_KEY_FILE'),
         string(credentialsId: 'COSIGN_PASSWORD', variable: 'COSIGN_PASSWORD')
     ]) {
         sh """
