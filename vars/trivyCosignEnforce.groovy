@@ -72,6 +72,5 @@ def call() {
             mv vuln.json reports/
         """
         def res = sh(script: cmd, returnStdout: true)
-        sh "echo ${res}"
     }
 }
