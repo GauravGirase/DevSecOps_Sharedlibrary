@@ -1,7 +1,7 @@
 def call() {
     withCredentials([
         file(credentialsId: 'COSIGN_KEY_FILE', variable: 'COSIGN_KEY_FILE'),
-        string(credentialsId: 'COSIGN_PASSWORD', variable: 'COSIGN_PASSWORD')
+        string(credentialsId: 'CONSIGN_PASSWORD', variable: 'COSIGN_PASSWORD')
     ]) {
         def cmd =  """
             set -e
